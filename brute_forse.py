@@ -10,7 +10,7 @@ def traveling_salesman_brute_forse(distance_matrix):
 
     i = 0
     for perm in itertools.permutations(cities[1:]):
-        print(f"{i}. {perm}")
+        print(f"{i + 1}. {perm}")
         route = [0] + list(perm) + [0]
         distance = sum(
             distance_matrix[route[i]][route[i + 1]] for i in range(num_cities)
@@ -82,6 +82,17 @@ city_coords = [
     (1.5, -3.4, 'Франківськ'),
     (-4.2, -4.5, 'Ужгород')
 ]
+
+"""
+Кількість можливих маршрутів C = (n - 1)!
+    Де n - це кількість міст.
+
+Задача для заходу України (8 міст) має:
+    5040 можливих маршрутів.
+
+Така ж задача для всіх обласних центрів України(1991)(26) має:
+    15 511 210 043 330 985 984 000 000 можливих маршрутів.
+"""
 
 distance_matrix = calculate_distance_matrix(city_coords)
 best_route, best_distance = traveling_salesman_brute_forse(distance_matrix)
