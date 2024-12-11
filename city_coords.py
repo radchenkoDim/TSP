@@ -1,23 +1,3 @@
-import matplotlib.pyplot as plt
-
-def maps(cities, route):
-    x = [cities[i][0] for i in route]
-    y = [cities[i][1] for i in route]
-
-    plt.figure(figsize=(8, 8))
-    plt.plot(x, y, '-o', label="Маршрут")
-    # plt.scatter(x, y, c='red', label="Міста")
-    
-    for i, (xi, yi, name) in enumerate(cities):
-        plt.text(xi, yi, f"{i + 1}. {name}", fontsize=6, ha='right')
-
-    plt.title("Оптимальний маршрут комівояджера")
-    plt.xlabel("X-координата")
-    plt.ylabel("Y-координата")
-    plt.legend()
-    plt.grid()
-    plt.show()
-
 city_coords = [
     (0, 0, 'Київ'),
     (55, 125, 'Чернігів'),
@@ -26,12 +6,11 @@ city_coords = [
     (110, -110, 'Черкаси'),
     (295, -85, 'Полтава'),
     (120, -215, 'Кропивницький'),
-    (205, -280, 'Кривий Ріг'),
     (330, -220, 'Дніпро'),
     (340, -290, 'Запоріжжя'),
     (535, -270, 'Донецьк'),
     (645, -210, 'Луганськ'),
-    (205, -390, 'Миколаїв'),
+    (105, -390, 'Миколаїв'),
     (150, -420, 'Херсон'),
     (10, -440, 'Одеса'),
     (215, -635, 'Севастопіль'),
@@ -46,5 +25,3 @@ city_coords = [
     (-320, 20, 'Рівне'),
     (-385, 40, 'Луцьк')
 ]
-
-maps(city_coords, range(len(city_coords)))
