@@ -76,4 +76,4 @@ best_route, best_distance = traveling_salesman_brute_forse(distance_matrix)
 print(f"Найкращий маршрут: {best_route}")
 print(f"Загальна відстань: {best_distance}")
 
-plot_route(city_coords, best_distance)
+plot_route(city_coords, best_route)
