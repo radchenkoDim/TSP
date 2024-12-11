@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 import itertools
 import math
-import module
 
 from city_coords import city_coords
 
@@ -43,6 +42,13 @@ def plot_all_connections(cities):
 
     plt.show()
 
+def combination_num(city_coords):
+    n = len(city_coords)
+    result = math.factorial(n - 1)
+    result_str = "{:,}".format(result)
+    result_str_replace = result_str.replace(',', ' ')
+    return result_str_replace
+
 print(f"Кількість міст: {len(city_coords)}")
-print(f"Кільтість комбінацій: {module.combination_num(city_coords)}")
+print(f"Кільтість комбінацій: {combination_num(city_coords)}")
 plot_all_connections(city_coords)
